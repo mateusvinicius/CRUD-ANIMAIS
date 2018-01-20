@@ -1,0 +1,66 @@
+<div class="container">
+
+<?php if(isset($posts)): foreach($posts as $post): ?>
+
+    <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+          <div class="topo">
+            <span class="fexar close">&times;</span>
+            </div>
+            <div class="dentro">
+                <p>deseja realmente excluir o animal: <?=$post->nome ?> do banco de dados ?</p>
+                <a href="<?=PATH?>/<?= $post->id?>/del" class="btn btn-info">Sim</a>
+
+                <a class="fexar btn btn-info">Não</a>
+            </div>
+          </div>
+
+    </div>
+<?php endforeach; endif ?>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="center">Animais</h2>
+        <a href="<?= PATH ?>/add" type="button" class="btn btn-primary btn-lg btn-block bt-adicionar">Adicionar novo animal</a>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+           <p>Lista de Animais</p>
+
+
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th> <th>Nome</th><th>Raça</th><th>peso</th><th class="margin-ac">Ações</th>
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <?php if(isset($posts)): foreach($posts as $post): ?>
+                            <tr>
+                                <td><?=$post->id ?></td><td><?=$post->nome ?></td><td><?=$post->raca ?></td><td><?=$post->peso ?></td>
+                                <td>
+                                <a href="<?=PATH?>/<?= $post->id?>/view" alt="visualizar" class="btn btn-info">visualizar</a>
+                                <a href="<?=PATH?>/<?= $post->id?>/edit" alt="editar" class="btn btn-info">Edita</a>
+
+
+                                <a  alt="Excluir" class="mostra btn btn-info">Excluir</a>
+                                <!-- href="<?=PATH?>/<?= $post->id?>/del" -->
+
+                                </td>
+                            </tr>
+                        <?php endforeach; endif ?>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

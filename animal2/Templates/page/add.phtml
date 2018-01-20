@@ -1,0 +1,43 @@
+<div class="container ">
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-3 centralizar ">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p class="center"> Cadasto de Animal </p>
+
+                </div>
+                <div class="panel-body">
+                    <form action="<?= PATH ?>/add" method="post" enctype="multipart/form-data">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Nome</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1"  name="nome" aria-describedby="emailHelp" placeholder="Nome">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Raça</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" name="raca" placeholder="Raça">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">peso</label>
+                        <input type="number" step="0.01" size="30" class="form-control" id="exampleInputPassword1" name="peso" placeholder="peso">
+                      </div>
+
+                      <button type="submit" class="btn btn-primary">Adicionar</button>
+                      <a href="<?=PATH?>/" class="btn btn-primary voltar">Voltar</a>
+                    </form>
+
+
+                </div>
+
+                <?php if(isset($error)): ?>
+                <div class="alert alert-warning" role="alert">
+    '               <?= $error ?>
+
+                </div>
+                <?php endif; ?>
+
+            </div>
+
+        </div>
+    </div>
+</div>
